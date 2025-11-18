@@ -72,13 +72,13 @@
 
 <!-- Social Media Links with Animation -->
 <p align="center">
-  <a href="https://linkedin.com/in/dilsha-perera" target="_blank">
+  <a href="www.linkedin.com/in/dilsha-perera-07b27224b" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=black&color=0077B5" />
   </a>
-  <a href="https://facebook.com/dilsha.perera" target="_blank">
+  <a href="https://www.facebook.com/share/19vMMsHvWN" target="_blank">
     <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white&labelColor=black&color=1877F2" />
   </a>
-  <a href="https://instagram.com/dilsha.perera" target="_blank">
+  <a href="https://www.instagram.com/_d_il_sh_a_99?igsh=MXJ4N21zNGQ0cGVlZw==" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=black&color=E4405F" />
   </a>
   <a href="mailto:dilshaperera1118@gmail.com">
