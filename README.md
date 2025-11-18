@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Animated Header -->
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=4000&pause=1000&color=FF6B8B&center=true&vCenter=true&width=600&height=60&lines=Hi+👋,+I'm+Dilsha+Perera;Aspiring+QA+Engineer;Software+Testing+Enthusiast;Software+Engineering +Student;Manual+%26+Automation+Testing" alt="Typing Animation" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=4000&pause=1000&color=FF6B8B&center=true&vCenter=true&width=600&height=60&lines=Hi+👋,+I'm+Dilsha+Perera;Software+Engineering+Student;Aspiring+QA+Engineer;Software+Testing+Enthusiast;Manual+%26+Automation+Testing" alt="Typing Animation" />
 
 <!-- Profile Views -->
 <p align="center">
