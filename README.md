@@ -168,7 +168,7 @@
         Full-stack web app with JWT authentication and role-based access control for managing blood donations
       </p>
       <div align="center">
-        <a href="#">
+        <a href="https://github.com/dilshag/BloodDonationManagementSystem-SpringBoot">
           <img src="https://img.shields.io/badge/View_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
         </a>
       </div>
@@ -183,7 +183,7 @@
         Cross-platform note-taking app with real-time synchronization and secure authentication
       </p>
       <div align="center">
-        <a href="#">
+        <a href="https://github.com/dilshag/Notezy---Note-Taking-App">
           <img src="https://img.shields.io/badge/View_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
         </a>
       </div>
@@ -201,7 +201,7 @@
         Responsive personal portfolio with modern design and optimized user experience
       </p>
       <div align="center">
-        <a href="#">
+        <a href="https://github.com/dilshag/Portfolio_2025">
           <img src="https://img.shields.io/badge/View_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
         </a>
       </div>
@@ -217,7 +217,7 @@
         Comprehensive manual and automated testing for banking application with detailed test cases
       </p>
       <div align="center">
-        <a href="#">
+        <a href="https://github.com/dilshag/Online_Banking_App_Testing--QA_Project">
           <img src="https://img.shields.io/badge/View_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
         </a>
       </div>
