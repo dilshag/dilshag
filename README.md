@@ -40,19 +40,29 @@
 
 ## 💼 Projects
 
-### 1️⃣ ParaBank QA Project
-![ParaBank Login](assets/parabank-login.png)
-- Manual and automated testing of a demo banking system  
-- Executed functional/UI tests, logged defects, and automated key flows using Selenium  
-![ParaBank Automation Demo](assets/parabank-automation.gif)  
-[Repo Link](https://github.com/YOURUSERNAME/parabank-project)
+• **Blood Donation Management System**
+  - Full-stack web app built with Spring Boot, Java, MySQL, and jQuery
+  - Implemented JWT authentication with Admin/Donor/Recipient roles
+  - Built a responsive UI for managing users, donations, and blood requests
+  - 🔗 Repo:https://github.com/dilshag/BloodDonationManagementSystem-SpringBoot
 
-### 2️⃣ Blood Donation Management QA Project
-![Blood Donation Workflow](assets/blood-donation.gif)
-- Tested donor registration, blood inventory management, and request workflow  
-- Validated backend APIs using Postman  
-![Blood Donation API Demo](assets/blood-donation-api.gif)  
-[Repo Link](https://github.com/YOURUSERNAME/blood-donation-qa)
+• **Portfolio Web**
+  - Personal portfolio website using HTML, CSS, JavaScript
+  - Fully responsive UI with modern design and optimized accessibility
+  - 🔗 Repo:https://github.com/dilshag/Portfolio_2025
+
+• **Notezy – Mobile App**
+  - Cross-platform note-taking app using React Native + Firebase
+  - Secure authentication, CRUD for notes, real-time syncing, tab navigation
+  - 🔗 Repo:https://github.com/dilshag/Notezy---Note-Taking-App
+
+• **Online Banking App Testing – Ongoing QA Project**
+  - Manual + automated testing on a demo banking system
+  - Created test cases, executed UI/functional tests
+  - Logged defects, automated flows with Selenium
+  - Validated APIs using Postman
+  - 🔗 Repo:https://github.com/dilshag/Online_Banking_App_Testing--QA_Project
+
 
 ---
 
