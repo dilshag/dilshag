@@ -40,29 +40,28 @@
 
 ## 💼 Projects
 
-• **Blood Donation Management System**
-  - Full-stack web app built with Spring Boot, Java, MySQL, and jQuery
-  - Implemented JWT authentication with Admin/Donor/Recipient roles
-  - Built a responsive UI for managing users, donations, and blood requests
-  - 🔗 Repo:https://github.com/dilshag/BloodDonationManagementSystem-SpringBoot
+• 🩸 **Blood Donation Management System**
+  - Full-stack web app built with **Spring Boot, Java, MySQL, and jQuery**
+  - Implemented **JWT authentication** with Admin/Donor/Recipient roles
+  - Built a **responsive UI** for managing users, donations, and blood requests
+  - 🔗 Repo: ![Repo](https://img.shields.io/badge/Repo-BloodDonation-blue?style=for-the-badge&logo=github&logoColor=white)
 
-• **Portfolio Web**
-  - Personal portfolio website using HTML, CSS, JavaScript
-  - Fully responsive UI with modern design and optimized accessibility
-  - 🔗 Repo:https://github.com/dilshag/Portfolio_2025
+• 🌐 **Portfolio Web**
+  - Personal portfolio website using **HTML, CSS, JavaScript**
+  - Fully **responsive UI** with modern design and optimized accessibility
+  - 🔗 Repo: ![Repo](https://img.shields.io/badge/Repo-Portfolio-green?style=for-the-badge&logo=github&logoColor=white)
 
-• **Notezy – Mobile App**
-  - Cross-platform note-taking app using React Native + Firebase
+• 📱 **Notezy – Mobile App**
+  - Cross-platform note-taking app using **React Native + Firebase**
   - Secure authentication, CRUD for notes, real-time syncing, tab navigation
-  - 🔗 Repo:https://github.com/dilshag/Notezy---Note-Taking-App
+  - 🔗 Repo: ![Repo](https://img.shields.io/badge/Repo-Notezy-orange?style=for-the-badge&logo=github&logoColor=white)
 
-• **Online Banking App Testing – Ongoing QA Project**
+• 🏦 **Online Banking App Testing – Ongoing QA Project**
   - Manual + automated testing on a demo banking system
   - Created test cases, executed UI/functional tests
-  - Logged defects, automated flows with Selenium
-  - Validated APIs using Postman
-  - 🔗 Repo:https://github.com/dilshag/Online_Banking_App_Testing--QA_Project
-
+  - Logged defects, automated flows with **Selenium**
+  - Validated APIs using **Postman**
+  - 🔗 Repo: ![Repo](https://img.shields.io/badge/Repo-BankingQA-red?style=for-the-badge&logo=github&logoColor=white)
 
 ---
 
