@@ -1,934 +1,346 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dilsha Perera | QA Engineer</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        :root {
-            --primary: #6C63FF;
-            --secondary: #FF6584;
-            --accent: #43B02A;
-            --dark: #2D2B55;
-            --light: #F5F5F7;
-            --gradient: linear-gradient(135deg, #6C63FF 0%, #FF6584 100%);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background-color: #0F0F23;
-            color: var(--light);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        /* Header Styles */
-        .header {
-            text-align: center;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-            z-index: -1;
-            animation: pulse 8s infinite alternate;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(1.1); opacity: 0.8; }
-        }
-        
-        .name {
-            font-size: 3.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1s ease;
-            font-weight: 700;
-        }
-        
-        .title {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            color: var(--light);
-            animation: fadeInUp 1s ease 0.2s both;
-            font-weight: 500;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            color: #A0A0C0;
-            animation: fadeInUp 1s ease 0.4s both;
-            margin-bottom: 2rem;
-        }
-        
-        /* Intro Section */
-        .intro {
-            text-align: center;
-            padding: 2rem 0;
-            margin: 2rem 0;
-            background: rgba(45, 43, 85, 0.5);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(108, 99, 255, 0.2);
-            animation: fadeIn 1s ease 0.6s both;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .intro::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.1), transparent);
-            animation: shimmer 3s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        
-        .intro p {
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
-        }
-        
-        .highlight {
-            color: var(--secondary);
-            font-weight: 600;
-        }
-        
-        .email {
-            color: var(--primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .email:hover {
-            color: var(--secondary);
-            text-shadow: 0 0 10px rgba(255, 101, 132, 0.5);
-        }
-        
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin: 3rem 0 2rem;
-            position: relative;
-        }
-        
-        .section-header h2 {
-            font-size: 2.2rem;
-            display: inline-block;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-        
-        /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.8rem 1.5rem;
-            background: rgba(45, 43, 85, 0.7);
-            border-radius: 50px;
-            text-decoration: none;
-            color: var(--light);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(108, 99, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .social-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            transition: all 0.5s ease;
-            z-index: -1;
-        }
-        
-        .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
-            color: white;
-        }
-        
-        .social-link:hover::before {
-            left: 0;
-        }
-        
-        .social-link img {
-            margin-right: 8px;
-            filter: brightness(0) invert(1);
-            width: 20px;
-            height: 20px;
-        }
-        
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .skill-item {
-            background: rgba(45, 43, 85, 0.7);
-            border-radius: 15px;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(108, 99, 255, 0.2);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skill-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-        
-        .skill-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .skill-item:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .skill-item img {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 10px;
-            filter: brightness(0.8);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover img {
-            filter: brightness(1);
-            transform: scale(1.1);
-        }
-        
-        .skill-item .badge {
-            background: var(--gradient);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-top: 5px;
-        }
-        
-        /* Projects Section */
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .project-card {
-            background: rgba(45, 43, 85, 0.7);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(108, 99, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .project-card:hover::before {
-            opacity: 0.1;
-        }
-        
-        .project-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--light);
-        }
-        
-        .project-desc {
-            color: #A0A0C0;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .tech-tag {
-            background: rgba(108, 99, 255, 0.2);
-            color: var(--primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .project-link {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
-            background: var(--gradient);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .project-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
-        }
-        
-        /* Stats Section */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .stat-card {
-            background: rgba(45, 43, 85, 0.7);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(108, 99, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .stat-card:hover::before {
-            opacity: 0.1;
-        }
-        
-        .stat-title {
-            font-size: 1rem;
-            color: #A0A0C0;
-            margin-bottom: 1rem;
-        }
-        
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        /* Highlights Section */
-        .highlights {
-            background: rgba(45, 43, 85, 0.7);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin: 3rem 0;
-            border: 1px solid rgba(108, 99, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .highlights::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 101, 132, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-            z-index: -1;
-            animation: pulse 6s infinite alternate-reverse;
-        }
-        
-        .highlights h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .highlight-list {
-            list-style: none;
-        }
-        
-        .highlight-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(108, 99, 255, 0.2);
-            display: flex;
-            align-items: center;
-        }
-        
-        .highlight-item:last-child {
-            border-bottom: none;
-        }
-        
-        .highlight-icon {
-            margin-right: 1rem;
-            font-size: 1.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 3rem 0 2rem;
-            color: #A0A0C0;
-            font-size: 0.9rem;
-            position: relative;
-        }
-        
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-        
-        .signature {
-            margin-top: 1rem;
-            font-size: 1rem;
-            color: var(--light);
-        }
-        
-        .heart {
-            color: var(--secondary);
-            animation: heartbeat 1.5s infinite;
-            display: inline-block;
-        }
-        
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            5% { transform: scale(1.1); }
-            10% { transform: scale(1); }
-            15% { transform: scale(1.1); }
-            20% { transform: scale(1); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Floating Elements */
-        .floating {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: rgba(108, 99, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            z-index: -1;
-        }
-        
-        .floating:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            width: 30px;
-            height: 30px;
-            animation-delay: 0s;
-        }
-        
-        .floating:nth-child(2) {
-            top: 20%;
-            right: 15%;
-            width: 40px;
-            height: 40px;
-            animation-delay: 1s;
-        }
-        
-        .floating:nth-child(3) {
-            bottom: 20%;
-            left: 15%;
-            width: 35px;
-            height: 35px;
-            animation-delay: 2s;
-        }
-        
-        .floating:nth-child(4) {
-            bottom: 10%;
-            right: 10%;
-            width: 45px;
-            height: 45px;
-            animation-delay: 3s;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-            100% { transform: translateY(0) rotate(360deg); }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .name {
-                font-size: 2.5rem;
-            }
-            
-            .title {
-                font-size: 1.5rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .skills-container {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            }
-            
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .social-link {
-                width: 200px;
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- Floating Elements -->
-        <div class="floating"></div>
-        <div class="floating"></div>
-        <div class="floating"></div>
-        <div class="floating"></div>
-        
-        <!-- Header Section -->
-        <div class="header">
-            <h1 class="name">Hi 👋, I'm Dilsha Perera</h1>
-            <h2 class="title">Aspiring QA Engineer | Software Testing Enthusiast | Manual & Automation Testing</h2>
-            <h3 class="subtitle">A passionate Software Engineering Student from Sri Lanka</h3>
-        </div>
-        
-        <!-- Intro Section -->
-        <div class="intro">
-            <p>🌱 I'm currently learning <span class="highlight">Selenium, Jira</span></p>
-            <p>💼 Looking to contribute to real-world QA projects and gain hands-on experience</p>
-            <p>📫 Reach me at: <a href="mailto:dilshaperera1118@gmail.com" class="email">dilshaperera1118@gmail.com</a></p>
-        </div>
-        
-        <!-- Connect Section -->
-        <div class="section-header">
-            <h2>Connect with me</h2>
-        </div>
-        
-        <div class="social-links">
-            <a href="https://linkedin.com/in/dilsha-perera" target="_blank" class="social-link">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn">
-                LinkedIn
-            </a>
-            <a href="https://facebook.com/dilsha.perera" target="_blank" class="social-link">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg" alt="Facebook">
-                Facebook
-            </a>
-            <a href="https://instagram.com/dilsha.perera" target="_blank" class="social-link">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg" alt="Instagram">
-                Instagram
-            </a>
-        </div>
-        
-        <!-- Skills Section -->
-        <div class="section-header">
-            <h2>Skills & Tools</h2>
-        </div>
-        
-        <div class="skills-container">
-            <div class="skill-item">
-                <img src="https://cdn.worldvectorlogo.com/logos/figma-1.svg" alt="Figma">
-                <span>Figma</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/spring.svg" alt="Spring Boot">
-                <span>Spring Boot</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/intellijidea.svg" alt="IntelliJ IDEA">
-                <span>IntelliJ IDEA</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/webstorm.svg" alt="WebStorm">
-                <span>WebStorm</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/visualstudiocode.svg" alt="VS Code">
-                <span>VS Code</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/postman.svg" alt="Postman">
-                <span>Postman</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/selenium.svg" alt="Selenium">
-                <span>Selenium</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/java.svg" alt="Java">
-                <span>Java</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python">
-                <span>Python</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg" alt="MySQL">
-                <span>MySQL</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mongodb.svg" alt="MongoDB">
-                <span>MongoDB</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/git.svg" alt="Git">
-                <span>Git</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub">
-                <span>GitHub</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/html5.svg" alt="HTML5">
-                <span>HTML5</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/css3.svg" alt="CSS3">
-                <span>CSS3</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg" alt="JavaScript">
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linux.svg" alt="Linux">
-                <span>Linux</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/arduino.svg" alt="Arduino">
-                <span>Arduino</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/apachejmeter.svg" alt="JMeter">
-                <span>JMeter</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/jira.svg" alt="Jira">
-                <span>Jira</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/react.svg" alt="React Native">
-                <span>React Native</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/apachetomcat.svg" alt="Tomcat">
-                <span>Tomcat</span>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/hibernate.svg" alt="Hibernate">
-                <span>Hibernate</span>
-            </div>
-        </div>
-        
-        <!-- Projects Section -->
-        <div class="section-header">
-            <h2>Projects</h2>
-        </div>
-        
-        <div class="projects-container">
-            <div class="project-card">
-                <div class="project-icon">🩸</div>
-                <h3 class="project-title">Blood Donation Management System</h3>
-                <p class="project-desc">Full-stack web app built with Spring Boot, Java, MySQL, and jQuery. Implemented JWT authentication with Admin/Donor/Recipient roles and built a responsive UI for managing users, donations, and blood requests.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">jQuery</span>
-                </div>
-                <a href="#" class="project-link">View Repository</a>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-icon">🌐</div>
-                <h3 class="project-title">Portfolio Web</h3>
-                <p class="project-desc">Personal portfolio website using HTML, CSS, JavaScript. Fully responsive UI with modern design and optimized accessibility.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <a href="#" class="project-link">View Repository</a>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-icon">📱</div>
-                <h3 class="project-title">Notezy – Mobile App</h3>
-                <p class="project-desc">Cross-platform note-taking app using React Native + Firebase. Secure authentication, CRUD for notes, real-time syncing, tab navigation.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">React Native</span>
-                    <span class="tech-tag">Firebase</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <a href="#" class="project-link">View Repository</a>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-icon">🏦</div>
-                <h3 class="project-title">Online Banking App Testing</h3>
-                <p class="project-desc">Manual + automated testing on a demo banking system. Created test cases, executed UI/functional tests, logged defects, automated flows with Selenium, and validated APIs using Postman.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Selenium</span>
-                    <span class="tech-tag">Postman</span>
-                    <span class="tech-tag">QA Testing</span>
-                </div>
-                <a href="#" class="project-link">View Repository</a>
-            </div>
-        </div>
-        
-        <!-- Stats Section -->
-        <div class="section-header">
-            <h2>GitHub Stats</h2>
-        </div>
-        
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-title">Total Contributions</div>
-                <div class="stat-value">1.2k+</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-title">Repositories</div>
-                <div class="stat-value">24</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-title">Followers</div>
-                <div class="stat-value">48</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-title">Stars Earned</div>
-                <div class="stat-value">18</div>
-            </div>
-        </div>
-        
-        <!-- Highlights Section -->
-        <div class="highlights">
-            <h3>Highlights & Fun Facts</h3>
-            <ul class="highlight-list">
-                <li class="highlight-item">
-                    <span class="highlight-icon">💡</span>
-                    Passionate about improving software quality and user experience
-                </li>
-                <li class="highlight-item">
-                    <span class="highlight-icon">🎯</span>
-                    Currently learning API automation using Postman & Selenium
-                </li>
-                <li class="highlight-item">
-                    <span class="highlight-icon">⚡</span>
-                    Always exploring new QA tools and testing methodologies
-                </li>
-                <li class="highlight-item">
-                    <span class="highlight-icon">☕</span>
-                    Enjoy coding, testing, and solving real-world software problems
-                </li>
-            </ul>
-        </div>
-        
-        <!-- Footer -->
-        <div class="footer">
-            <p>Crafted with <span class="heart">💖</span> by Dilsha Perera</p>
-            <p class="signature">✨ Quality Assurance Specialist in the Making ✨</p>
-        </div>
-    </div>
+<div align="center">
 
-    <script>
-        // Add scroll animations
-        document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe all sections for animation
-            const sections = document.querySelectorAll('.intro, .social-links, .skills-container, .projects-container, .stats-container, .highlights');
-            sections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(section);
-            });
-        });
-    </script>
-</body>
-</html>
+<!-- Animated Header -->
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=4000&pause=1000&color=FF6B8B&center=true&vCenter=true&width=600&height=60&lines=Hi+👋,+I'm+Dilsha+Perera;Aspiring+QA+Engineer;Software+Testing+Enthusiast;Manual+%26+Automation+Testing" alt="Typing Animation" />
 
+<!-- Profile Views -->
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Dilsha-Perera&label=Profile%20Views&color=blueviolet&style=flat" alt="Profile Views" />
+</p>
 
+</div>
 
+<!-- Animated Divider -->
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div>
 
+## 🚀 About Me
 
+<div align="center">
+
+✨ **A passionate Software Engineering Student from Sri Lanka** ✨
+
+</div>
+
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="100" />
+      <br/>
+      <b>🌱 Currently Learning</b>
+      <br/>
+      <code><img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" /></code>
+      <code><img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white" /></code>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://media.giphy.com/media/26n6WjJEK4Cm1x9sA/giphy.gif" width="100" />
+      <br/>
+      <b>💼 Looking For</b>
+      <br/>
+      Real-world QA projects & hands-on experience
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://media.giphy.com/media/YS13cCgfY5yR9Yfz3G/giphy.gif" width="80" />
+      <br/>
+      <b>📫 Reach Me</b>
+      <br/>
+      <a href="mailto:dilshaperera1118@gmail.com">
+        <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+      </a>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://media.giphy.com/media/kUTfgf2Hd2QspLrMp0/giphy.gif" width="80" />
+      <br/>
+      <b>🎯 Goal</b>
+      <br/>
+      Become a Professional QA Engineer
+    </td>
+  </tr>
+</table>
+
+<!-- Animated Divider -->
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div>
+
+## 🤝 Connect With Me
+
+<div align="center">
+
+<!-- Social Media Links with Animation -->
+<p align="center">
+  <a href="https://linkedin.com/in/dilsha-perera" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=black&color=0077B5" />
+  </a>
+  <a href="https://facebook.com/dilsha.perera" target="_blank">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white&labelColor=black&color=1877F2" />
+  </a>
+  <a href="https://instagram.com/dilsha.perera" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=black&color=E4405F" />
+  </a>
+  <a href="mailto:dilshaperera1118@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=black&color=D14836" />
+  </a>
+</p>
+
+</div>
+
+<!-- Animated Divider -->
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div>
+
+## 🛠️ Tech Stack & Tools
+
+<div align="center">
+
+### 💻 Programming Languages
+<p>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+</p>
+
+### 🎨 Frontend Development
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+</p>
+
+### 🔧 Backend & Frameworks
+<p>
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" />
+  <img src="https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=black" />
+</p>
+
+### 🗄️ Databases
+<p>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+</p>
+
+### ⚙️ QA & Testing Tools
+<p>
+  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" />
+  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
+  <img src="https://img.shields.io/badge/JMeter-DB0000?style=for-the-badge&logo=apachejmeter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white" />
+</p>
+
+### 🛠️ Development Tools
+<p>
+  <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" />
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
+  <img src="https://img.shields.io/badge/WebStorm-000000?style=for-the-badge&logo=webstorm&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
+  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
+</p>
+
+</div>
+
+<!-- Animated Divider -->
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div>
+
+## 💼 Featured Projects
+
+<div align="center">
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3 align="center">🩸 Blood Donation Management System</h3>
+      <div align="center">
+        <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white" />
+        <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" />
+        <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+      </div>
+      <p align="center">
+        Full-stack web app with JWT authentication and role-based access control for managing blood donations
+      </p>
+      <div align="center">
+        <a href="#">
+          <img src="https://img.shields.io/badge/View_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
+        </a>
+      </div>
+    </td>
+    <td width="50%" valign="top">
+      <h3 align="center">📱 Notezy Mobile App</h3>
+      <div align="center">
+        <img src="https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
+        <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+      </div>
+      <p align="center">
+        Cross-platform note-taking app with real-time synchronization and secure authentication
+      </p>
+      <div align="center">
+        <a href="#">
+          <img src="https://img.shields.io/badge/View_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
+        </a>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3 align="center">🌐 Portfolio Website</h3>
+      <div align="center">
+        <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+        <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+      </div>
+      <p align="center">
+        Responsive personal portfolio with modern design and optimized user experience
+      </p>
+      <div align="center">
+        <a href="#">
+          <img src="https://img.shields.io/badge/View_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
+        </a>
+      </div>
+    </td>
+    <td width="50%" valign="top">
+      <h3 align="center">🏦 Banking App QA Testing</h3>
+      <div align="center">
+        <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" />
+        <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
+        <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white" />
+      </div>
+      <p align="center">
+        Comprehensive manual and automated testing for banking application with detailed test cases
+      </p>
+      <div align="center">
+        <a href="#">
+          <img src="https://img.shields.io/badge/View_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<!-- Animated Divider -->
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div>
+
+## 📊 GitHub Analytics
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api?username=Dilsha-Perera&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117" />
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dilsha-Perera&layout=compact&theme=radical&hide_border=true&bg_color=0D1117" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Dilsha-Perera&theme=radical&hide_border=true&background=0D1117" />
+    </td>
+  </tr>
+</table>
+
+<!-- Snake Animation -->
+<p align="center">
+  <img src="https://github.com/1999AZZAR/1999AZZAR/blob/main/resources/img/grid-snake.svg" alt="snake" />
+</p>
+
+</div>
+
+<!-- Animated Divider -->
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div>
+
+## 🌟 Highlights & Fun Facts
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="40" />
+      <br/>
+      <b>Quality Focus</b>
+      <br/>
+      Passionate about software quality and user experience
+    </td>
+    <td align="center" width="25%">
+      <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="40" />
+      <br/>
+      <b>API Automation</b>
+      <br/>
+      Learning Postman & Selenium automation
+    </td>
+    <td align="center" width="25%">
+      <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="40" />
+      <br/>
+      <b>Continuous Learning</b>
+      <br/>
+      Always exploring new QA methodologies
+    </td>
+    <td align="center" width="25%">
+      <img src="https://media.giphy.com/media/ZCN6F3FAkwsyOGU2RS/giphy.gif" width="40" />
+      <br/>
+      <b>Problem Solving</b>
+      <br/>
+      Enjoy coding and testing challenges
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<!-- Animated Divider -->
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div>
+
+<div align="center">
+
+## 🎯 Currently Focusing On
+
+<p>
+  <img src="https://img.shields.io/badge/QA_Automation-FF6B8B?style=for-the-badge&logo=testing-library&logoColor=white" />
+  <img src="https://img.shields.io/badge/API_Testing-009688?style=for-the-badge&logo=postman&logoColor=white" />
+  <img src="https://img.shields.io/badge/Test_Cases-4CAF50?style=for-the-badge&logo=testcafe&logoColor=white" />
+</p>
+
+</div>
+
+<!-- Footer -->
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<br/>
+
+### ✨ Crafted with 💖 by Dilsha Perera
+
+<p align="center">
+  <img src="https://media.giphy.com/media/jpVnC65DmYeyRL4Ley/giphy.gif" width="20" />
+  Thanks for visiting my profile!
+  <img src="https://media.giphy.com/media/jpVnC65DmYeyRL4Ley/giphy.gif" width="20" />
+</p>
+
+<!-- GitHub Trophy -->
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Dilsha-Perera&theme=radical&no-frame=true&no-bg=false&margin-w=4&row=2&column=4" />
+</p>
+
+</div>
 
 
 <!-- <h1 align="center">Hi 👋, I'm Dilsha Perera</h1>
